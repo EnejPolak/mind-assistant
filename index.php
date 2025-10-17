@@ -91,7 +91,7 @@
                         <span class="price-period">/ month</span>
                     </div>
                     <p class="plan-description">Access to the daily reflection flow and personalized check-ins.</p>
-                    <button class="plan-cta plan-cta-free">Start for free</button>
+                    <a href="signup.php" class="plan-cta plan-cta-free">Start for free</a>
                 </div>
 
                 <!-- Plus Plan -->
@@ -102,7 +102,7 @@
                         <span class="price-period">/ month</span>
                     </div>
                     <p class="plan-description">Guided prompts, deeper mood tracking, and weekly mental insights.</p>
-                    <button class="plan-cta plan-cta-plus">Get Plus</button>
+                    <a href="signup.php" class="plan-cta plan-cta-plus">Get Plus</a>
                 </div>
 
                 <!-- Pro Plan -->
@@ -113,7 +113,7 @@
                         <span class="price-period">/ month</span>
                     </div>
                     <p class="plan-description">Full self-guidance system with advanced reflection tools and AI-driven support.</p>
-                    <button class="plan-cta plan-cta-pro">Go Pro</button>
+                    <a href="signup.php" class="plan-cta plan-cta-pro">Go Pro</a>
                 </div>
             </div>
         </div>
@@ -129,10 +129,11 @@
                 </div>
                 
                 <nav class="footer-nav">
-                    <a href="#home">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#features">Features</a>
-                    <a href="#contact">Contact</a>
+                    <a href="index.php">Home</a>
+                    <a href="about.php">About</a>
+                    <a href="features.php">Features</a>
+                    <a href="future.php">Future</a>
+                    <a href="contact.php">Contact</a>
                 </nav>
                 
                 <div class="footer-social">
@@ -160,8 +161,8 @@
             <div class="footer-bottom">
                 <p>&copy; 2025 Mind Assistant. All rights reserved.</p>
                 <div class="footer-legal">
-                    <a href="#privacy">Privacy</a>
-                    <a href="#terms">Terms</a>
+                    <a href="privacy.php">Privacy</a>
+                    <a href="terms.php">Terms</a>
                 </div>
             </div>
         </div>
@@ -171,33 +172,23 @@
     <script>
         // Intersection Observer for scroll-triggered animations on homepage
         const observerOptions = {
-            threshold: 0.15,
-            rootMargin: '0px 0px -80px 0px'
+            threshold: 0.2,
+            rootMargin: '0px 0px -100px 0px'
         };
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    // Add a small delay to each child element for stagger effect
-                    const children = entry.target.querySelectorAll('.ai-brain-headline, .ai-brain-subheadline, .ai-brain-body p, .brain-chaos-headline, .brain-chaos-subheadline, .cta-button, .pricing-headline, .pricing-subheadline, .pricing-card');
-                    
-                    children.forEach((child, index) => {
-                        setTimeout(() => {
-                            child.style.opacity = '1';
-                            child.style.transform = 'translateY(0) translateX(0)';
-                        }, index * 100);
-                    });
-                    
-                    // Unobserve after animation
-                    observer.unobserve(entry.target);
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0) translateX(0)';
                 }
             });
         }, observerOptions);
 
-        // Observe sections on page load
+        // Observe individual elements on page load
         document.addEventListener('DOMContentLoaded', () => {
-            const sections = document.querySelectorAll('.ai-brain-section, .brain-chaos-section, .pricing-section');
-            sections.forEach(section => observer.observe(section));
+            const elements = document.querySelectorAll('.ai-brain-headline, .ai-brain-subheadline, .ai-brain-body p, .brain-chaos-headline, .brain-chaos-subheadline, .cta-button, .pricing-headline, .pricing-subheadline, .pricing-card, .future-headline, .future-subheadline, .roadmap-card, .future-cta');
+            elements.forEach(el => observer.observe(el));
         });
     </script>
 </body>

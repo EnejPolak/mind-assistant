@@ -8,8 +8,9 @@
         <ul class="nav-menu">
             <li><a href="index.php" class="nav-link">Home</a></li>
             <li><a href="about.php" class="nav-link">About</a></li>
-            <li><a href="#features" class="nav-link">Features</a></li>
-            <li><a href="#contact" class="nav-link">Contact</a></li>
+            <li><a href="features.php" class="nav-link">Features</a></li>
+            <li><a href="future.php" class="nav-link">Future</a></li>
+            <li><a href="contact.php" class="nav-link">Contact</a></li>
             <li><a href="reflection.php" class="nav-link btn-primary">Get Started</a></li>
         </ul>
         <div class="hamburger">

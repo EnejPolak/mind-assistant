@@ -29,24 +29,34 @@
             z-index: 10;
             width: 100%;
             min-height: 100vh;
-            padding: 40px 60px 80px 80px;
+            padding: 40px 60px 80px 60px;
             background: #F8F3FF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .about-text {
             max-width: 700px;
             text-align: left;
+            width: 100%;
         }
 
         .about-brain-bg {
-            position: sticky;
+            position: fixed;
             top: 80px;
             right: 0;
-            width: 100%;
+            width: 45%;
             height: calc(100vh - 80px);
             z-index: 1;
             pointer-events: none;
             background: #F8F3FF;
+            transition: all 0.3s ease-out;
+        }
+
+        .about-brain-bg.stop-scroll {
+            position: absolute;
+            top: auto;
         }
 
         .about-brain-bg iframe {
@@ -371,7 +381,7 @@
         <!-- Brain Background -->
         <div class="about-brain-bg">
             <iframe 
-                src="https://my.spline.design/aibrainblack-TPbaIYMgqHNFN3W9LGJIAlyW/" 
+                src="https://my.spline.design/aibrainblack-TPbaIYMgqHNFN3W9LGJIAlyW/?v=2" 
                 frameborder="0" 
                 width="100%" 
                 height="100%"
@@ -421,8 +431,8 @@
             <div class="footer-bottom">
                 <p>&copy; 2025 Mind Assistant. All rights reserved.</p>
                 <div class="footer-legal">
-                    <a href="#privacy">Privacy</a>
-                    <a href="#terms">Terms</a>
+                    <a href="privacy.php">Privacy</a>
+                    <a href="terms.php">Terms</a>
                 </div>
             </div>
         </div>
@@ -448,6 +458,34 @@
         document.addEventListener('DOMContentLoaded', () => {
             const elements = document.querySelectorAll('.about-text h1, .about-text h2, .about-text h3, .about-text p, .about-text li, .about-cta');
             elements.forEach(el => observer.observe(el));
+
+            // Handle brain scroll - stop before CTA box
+            const brainBg = document.querySelector('.about-brain-bg');
+            const ctaBox = document.querySelector('.about-cta');
+            const aboutPage = document.querySelector('.about-page');
+
+            function handleBrainScroll() {
+                if (!brainBg || !ctaBox || !aboutPage) return;
+
+                const ctaTop = ctaBox.getBoundingClientRect().top + window.scrollY;
+                const brainHeight = brainBg.offsetHeight;
+                const scrollY = window.scrollY;
+                const stopPoint = ctaTop - brainHeight - 80 - 50; // 80px navbar + 50px margin
+
+                if (scrollY >= stopPoint) {
+                    // Brain should stop scrolling before CTA box
+                    brainBg.classList.add('stop-scroll');
+                    brainBg.style.top = (stopPoint) + 'px';
+                } else {
+                    // Brain follows scroll normally (fixed position)
+                    brainBg.classList.remove('stop-scroll');
+                    brainBg.style.top = '80px';
+                }
+            }
+
+            window.addEventListener('scroll', handleBrainScroll);
+            window.addEventListener('resize', handleBrainScroll);
+            handleBrainScroll(); // Initial check
         });
     </script>
 </body>

@@ -10,10 +10,8 @@
     <link rel="stylesheet" href="reflection.css">
 </head>
 <body>
-    <!-- Container for all steps -->
     <div class="reflection-container">
         
-        <!-- Step 1: Intro -->
         <section class="step active" id="step-intro">
             <div class="brain-animation">
                 <iframe 
@@ -33,7 +31,6 @@
             </div>
         </section>
 
-        <!-- Step 2: Question 1 - Awareness -->
         <section class="step" id="step-q1">
             <div class="step-content">
                 <h2 class="step-headline">What best describes how your mind feels right now?</h2>
@@ -67,7 +64,6 @@
             </div>
         </section>
 
-        <!-- Step 3: Question 2 - Current Triggers -->
         <section class="step" id="step-q2">
             <div class="step-content">
                 <h2 class="step-headline">What's been weighing on you lately?</h2>
@@ -106,7 +102,6 @@
             </div>
         </section>
 
-        <!-- Step 4: Guided Message -->
         <section class="step" id="step-message">
             <div class="message-content">
                 <div class="brain-clear-animation">
@@ -128,7 +123,6 @@
             </div>
         </section>
 
-        <!-- Step 5: Personalized 3-Step Reset -->
         <section class="step" id="step-reset">
             <div class="reset-content">
                 <h2 class="reset-headline">Your reset for today</h2>
@@ -159,7 +153,6 @@
             </div>
         </section>
 
-        <!-- Step 6: Outro / Invitation -->
         <section class="step" id="step-outro">
             <div class="outro-content">
                 <p class="outro-message">Reflection doesn't end here.</p>

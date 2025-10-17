@@ -10,10 +10,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Include Navbar Component -->
     <?php include 'components/navbar.php'; ?>
-
-    <!-- Future Section -->
     <section class="future-section">
         <div class="future-content">
             <h2 class="future-headline">The Future of Mind Assistant</h2>
@@ -73,7 +70,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-main">
@@ -121,7 +117,6 @@
         </div>
     </footer>
 
-    <!-- Waitlist Modal -->
     <div id="waitlistModal" class="modal">
         <div class="modal-content">
             <span class="modal-close" onclick="closeWaitlistModal()">&times;</span>
@@ -144,7 +139,6 @@
         </div>
     </div>
 
-    <!-- Newsletter Modal -->
     <div id="newsletterModal" class="modal">
         <div class="modal-content">
             <span class="modal-close" onclick="closeNewsletterModal()">&times;</span>

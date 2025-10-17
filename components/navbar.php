@@ -1,4 +1,3 @@
-<!-- Navbar Component -->
 <nav class="navbar">
     <div class="nav-container">
         <div class="nav-logo">

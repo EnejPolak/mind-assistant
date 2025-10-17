@@ -218,7 +218,6 @@
         </div>
 
         <div class="contact-container">
-            <!-- Contact Information -->
             <div class="contact-info">
                 <div class="contact-card">
                     <div class="contact-card-icon">
@@ -263,7 +262,6 @@
                 </div>
             </div>
 
-            <!-- Contact Form -->
             <div class="contact-form-container">
                 <h2>Send Us a Message</h2>
                 <p>Fill out the form below and we'll get back to you as soon as possible.</p>

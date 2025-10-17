@@ -11,15 +11,10 @@
     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.28/build/spline-viewer.js"></script>
 </head>
 <body>
-    <!-- Include Navbar Component -->
     <?php include 'components/navbar.php'; ?>
 
-    <!-- Hero Section -->
     <section class="hero-section">
-        <!-- Hero Title -->
         <h1 class="hero-title">Listen to what your mind is trying to tell you.</h1>
-        
-        <!-- 3D Brain Model -->
         <div class="spline-container">
             <iframe 
                 src="https://my.spline.design/brain-WUQgRA2lPT7YtVneLCAu28fU/" 
@@ -30,11 +25,8 @@
             </iframe>
         </div>
         
-        <!-- Hero Subtitle -->
         <p class="hero-subtitle">A digital companion for self-reflection, emotional awareness, and personal growth.</p>
     </section>
-
-    <!-- AI Brain Section -->
     <section class="ai-brain-section">
         <div class="ai-brain-text">
             <h2 class="ai-brain-headline">Do you ever feel like everything's happening inside your head — all at once?</h2>
@@ -55,8 +47,6 @@
             </iframe>
         </div>
     </section>
-
-    <!-- Brain Chaos Section -->
     <section class="brain-chaos-section">
         <div class="brain-chaos-text">
             <h2 class="brain-chaos-headline">"Clarity begins when the noise fades."</h2>
@@ -75,15 +65,12 @@
             </iframe>
         </div>
     </section>
-
-    <!-- Pricing Section -->
     <section class="pricing-section">
         <div class="pricing-content">
             <h2 class="pricing-headline">Choose the space that fits your growth.</h2>
             <p class="pricing-subheadline">Start free. Upgrade when you're ready for deeper guidance.</p>
             
             <div class="pricing-plans">
-                <!-- Free Plan -->
                 <div class="pricing-card">
                     <h3 class="plan-title">Listen</h3>
                     <div class="plan-price">
@@ -94,7 +81,6 @@
                     <a href="signup.php" class="plan-cta plan-cta-free">Start for free</a>
                 </div>
 
-                <!-- Plus Plan -->
                 <div class="pricing-card pricing-card-featured">
                     <h3 class="plan-title">Reflect</h3>
                     <div class="plan-price">
@@ -105,7 +91,6 @@
                     <a href="signup.php" class="plan-cta plan-cta-plus">Get Plus</a>
                 </div>
 
-                <!-- Pro Plan -->
                 <div class="pricing-card">
                     <h3 class="plan-title">Grow</h3>
                     <div class="plan-price">
@@ -118,8 +103,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-main">

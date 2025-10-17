@@ -11,18 +11,13 @@
     <link rel="stylesheet" href="features.css">
 </head>
 <body>
-    <!-- Include Navbar Component -->
     <?php include 'components/navbar.php'; ?>
-
-    <!-- Features Page -->
     <div class="features-page">
-        <!-- Features Hero -->
         <section class="features-hero">
             <h1 class="features-headline">Features That Empower Your Mind</h1>
             <p class="features-subheadline">Mind Assistant combines calm design with intelligent guidance — helping you build clarity, balance, and emotional awareness every day.</p>
         </section>
 
-        <!-- Core Features Grid -->
         <section class="core-features">
             <div class="feature-card">
                 <div class="feature-icon">
@@ -92,7 +87,6 @@
             </div>
         </section>
 
-        <!-- Features CTA -->
         <section class="features-cta">
             <h2 class="cta-headline">Start Your Journey Today</h2>
             <p class="cta-subheadline">Calm technology. Human results.</p>
@@ -103,7 +97,6 @@
         </section>
     </div>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-main">

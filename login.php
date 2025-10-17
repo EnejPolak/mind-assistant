@@ -11,7 +11,6 @@
 </head>
 <body>
     <div class="auth-container">
-        <!-- Left Side - Form -->
         <div class="auth-form-side">
             <div class="auth-form-content">
                 <div class="auth-header">
@@ -68,7 +67,6 @@
             </div>
         </div>
 
-        <!-- Right Side - Brain Animation -->
         <div class="auth-brain-side">
             <iframe 
                 src="https://my.spline.design/particleaibrain-9vspPFsvKkx9vkWLpOBiGAAF/" 

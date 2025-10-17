@@ -323,22 +323,16 @@
     </style>
 </head>
 <body>
-    <!-- Include Navbar Component -->
     <?php include 'components/navbar.php'; ?>
-
-    <!-- About Page -->
     <div class="about-page">
-        <!-- About Content -->
         <div class="about-content">
             <div class="about-text">
-                <!-- Hero Section -->
                 <h1>We built Mind Assistant for one reason — to help you hear yourself again.</h1>
                 
                 <p>In a world that moves faster than your thoughts, silence has become a luxury. We're constantly surrounded by noise — notifications, advice, expectations. Mind Assistant was created as a calm space where you can pause, listen, and reconnect with what's already inside you.</p>
                 
                 <p>It doesn't tell you what to think. It helps you notice what's been trying to speak all along — your own mind.</p>
 
-                <!-- Section 1 -->
                 <h2>Our Philosophy</h2>
                 <h3>Listening is the first step to change.</h3>
                 
@@ -351,7 +345,6 @@
                     <li>Build mental balance one small moment at a time.</li>
                 </ul>
 
-                <!-- Section 2 -->
                 <h2>How it Works</h2>
                 <h3>Simple. Quiet. Powerful.</h3>
                 
@@ -361,7 +354,6 @@
                 
                 <p>Mind Assistant isn't another productivity tool — it's a companion for emotional clarity. It reminds you that peace isn't something you chase; it's something you uncover.</p>
 
-                <!-- Section 3 -->
                 <h2>Our Vision</h2>
                 <h3>Built with empathy, backed by science.</h3>
                 
@@ -369,7 +361,6 @@
                 
                 <p>We believe in quiet technology — tools that listen before they speak, and that guide without forcing. Every part of Mind Assistant is designed to feel safe, simple, and honest — a space where you can slow down and truly hear yourself again.</p>
 
-                <!-- CTA Section -->
                 <div class="about-cta">
                     <h3>Clarity begins with listening.</h3>
                     <p>Start your reflection, and take the first step back to yourself.</p>
@@ -378,7 +369,6 @@
             </div>
         </div>
 
-        <!-- Brain Background -->
         <div class="about-brain-bg">
             <iframe 
                 src="https://my.spline.design/aibrainblack-TPbaIYMgqHNFN3W9LGJIAlyW/?v=2" 
@@ -390,7 +380,6 @@
         </div>
     </div>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-main">

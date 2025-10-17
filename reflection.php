@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Begin Your Reflection | Mind Assistant</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="reflection.css">
-</head>
-<body>
+<?php get_header(); ?>
     <!-- Container for all steps -->
     <div class="reflection-container">
         
@@ -165,15 +154,13 @@
                 <p class="outro-message">Reflection doesn't end here.</p>
                 <p class="outro-message">Mind Assistant grows with you — one small step at a time.</p>
                 <div class="outro-actions">
-                    <a href="signup.php" class="cta-button primary">Create free account →</a>
-                    <a href="index.php" class="cta-button secondary">Continue as guest →</a>
+                    <a href="<?php echo home_url('/signup/'); ?>" class="cta-button primary">Create free account →</a>
+                    <a href="<?php echo home_url('/'); ?>" class="cta-button secondary">Continue as guest →</a>
                 </div>
             </div>
         </section>
 
     </div>
 
-    <script src="reflection.js"></script>
-</body>
-</html>
+<?php get_footer(); ?>
 

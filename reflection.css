@@ -10,6 +10,8 @@ body {
     background: linear-gradient(135deg, #F8F3FF 0%, #ECE7FB 100%);
     min-height: 100vh;
     overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 /* Container */
@@ -17,15 +19,15 @@ body {
     width: 100%;
     min-height: 100vh;
     position: relative;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 /* Steps - Base */
 .step {
-    position: fixed;
-    top: 0;
-    left: 0;
+    position: relative;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -33,6 +35,7 @@ body {
     visibility: hidden;
     transition: opacity 0.5s ease, visibility 0.5s ease;
     overflow: visible;
+    padding: 2rem 1rem;
 }
 
 .step.active {
@@ -476,6 +479,44 @@ body {
         gap: 25px;
         max-width: 600px;
         margin: 0 auto 50px;
+    }
+}
+
+/* Mobile scroll fixes */
+@media (max-width: 768px) {
+    .reflection-container {
+        height: auto;
+        min-height: 100vh;
+        overflow-y: visible;
+    }
+    
+    .step {
+        position: relative;
+        height: auto;
+        min-height: 100vh;
+        padding: 1rem;
+        display: block;
+    }
+    
+    .step-content,
+    .message-content,
+    .reset-content,
+    .outro-content {
+        padding: 2rem 1rem;
+        height: auto;
+        min-height: auto;
+    }
+    
+    .task-card {
+        margin-bottom: 1rem;
+    }
+    
+    .reset-tasks {
+        display: block;
+    }
+    
+    .reset-actions {
+        margin-top: 2rem;
     }
 }
 

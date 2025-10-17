@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Account | Mind Assistant</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="auth.css">
-</head>
-<body>
+<?php get_header(); ?>
     <div class="auth-container">
         <!-- Left Side - Form -->
         <div class="auth-form-side">
@@ -60,7 +49,7 @@
                 </div>
 
                 <div class="auth-footer">
-                    Already have an account? <a href="login.php">Log in</a>
+                    Already have an account? <a href="<?php echo home_url('/login/'); ?>">Log in</a>
                 </div>
             </div>
         </div>
@@ -76,5 +65,5 @@
             </iframe>
         </div>
     </div>
-</body>
-</html>
+
+<?php get_footer(); ?>

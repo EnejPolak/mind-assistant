@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Mind Assistant</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+<?php get_header(); ?>
     <style>
         .contact-page {
             min-height: 100vh;
@@ -207,9 +198,6 @@
             .contact-form-container { padding: 35px 25px; }
         }
     </style>
-</head>
-<body>
-    <?php include 'components/navbar.php'; ?>
 
     <div class="contact-page">
         <div class="contact-hero">
@@ -307,15 +295,15 @@
         <div class="footer-content">
             <div class="footer-main">
                 <div class="footer-brand">
-                    <img src="mindLogo.png" alt="Mind Assistant Logo" class="footer-logo">
+                    <img src="<?php echo get_template_directory_uri(); ?>/mindLogo.png" alt="Mind Assistant Logo" class="footer-logo">
                     <span class="footer-brand-name">Mind Assistant</span>
                 </div>
                 <nav class="footer-nav">
-                    <a href="index.php">Home</a>
-                    <a href="about.php">About</a>
-                    <a href="features.php">Features</a>
-                    <a href="future.php">Future</a>
-                    <a href="contact.php">Contact</a>
+                    <a href="<?php echo home_url('/'); ?>">Home</a>
+                    <a href="<?php echo home_url('/about/'); ?>">About</a>
+                    <a href="<?php echo home_url('/features/'); ?>">Features</a>
+                    <a href="<?php echo home_url('/future/'); ?>">Future</a>
+                    <a href="<?php echo home_url('/contact/'); ?>">Contact</a>
                 </nav>
                 <div class="footer-social">
                     <a href="#" class="social-link" aria-label="Twitter">
@@ -341,8 +329,8 @@
             <div class="footer-bottom">
                 <p>&copy; 2025 Mind Assistant. All rights reserved.</p>
                 <div class="footer-legal">
-                    <a href="privacy.php">Privacy</a>
-                    <a href="terms.php">Terms</a>
+                    <a href="<?php echo home_url('/privacy/'); ?>">Privacy</a>
+                    <a href="<?php echo home_url('/terms/'); ?>">Terms</a>
                 </div>
             </div>
         </div>
@@ -371,6 +359,5 @@
             event.target.reset();
         }
     </script>
-</body>
-</html>
+<?php get_footer(); ?>
 

@@ -62,7 +62,7 @@
             <h2 class="brain-chaos-headline">"Clarity begins when the noise fades."</h2>
             <p class="brain-chaos-subheadline">"Mind Assistant helps you quiet the storm — not by silencing it, but by listening."</p>
             <div class="brain-chaos-cta">
-                <button class="cta-button">Start my 2-minute reflection</button>
+                <a href="reflection.php" class="cta-button">Start my 2-minute reflection</a>
             </div>
         </div>
         <div class="brain-chaos-model">
@@ -118,8 +118,88 @@
             </div>
         </div>
     </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <img src="mindLogo.png" alt="Mind Assistant Logo" class="footer-logo">
+                    <span class="footer-brand-name">Mind Assistant</span>
+                </div>
+                
+                <nav class="footer-nav">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#features">Features</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+                
+                <div class="footer-social">
+                    <a href="#" class="social-link" aria-label="Twitter">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Instagram">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <rect stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+                            <line stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="LinkedIn">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+                            <circle stroke-linecap="round" stroke-linejoin="round" stroke-width="2" cx="4" cy="4" r="2"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Mind Assistant. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#privacy">Privacy</a>
+                    <a href="#terms">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
     
     <script src="script.js"></script>
+    <script>
+        // Intersection Observer for scroll-triggered animations on homepage
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -80px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Add a small delay to each child element for stagger effect
+                    const children = entry.target.querySelectorAll('.ai-brain-headline, .ai-brain-subheadline, .ai-brain-body p, .brain-chaos-headline, .brain-chaos-subheadline, .cta-button, .pricing-headline, .pricing-subheadline, .pricing-card');
+                    
+                    children.forEach((child, index) => {
+                        setTimeout(() => {
+                            child.style.opacity = '1';
+                            child.style.transform = 'translateY(0) translateX(0)';
+                        }, index * 100);
+                    });
+                    
+                    // Unobserve after animation
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe sections on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.ai-brain-section, .brain-chaos-section, .pricing-section');
+            sections.forEach(section => observer.observe(section));
+        });
+    </script>
 </body>
 </html>
 

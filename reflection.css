@@ -1,0 +1,481 @@
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #F8F3FF 0%, #ECE7FB 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Container */
+.reflection-container {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Steps - Base */
+.step {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    overflow: visible;
+}
+
+.step.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Step 1: Intro */
+#step-intro {
+    position: relative;
+}
+
+.brain-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.3;
+}
+
+.intro-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    max-width: 700px;
+    padding: 40px;
+}
+
+.breath-icon {
+    font-size: 60px;
+    margin-bottom: 30px;
+    opacity: 0;
+    animation: breatheIn 3s ease-in-out infinite, fadeInUp 1s ease-out 0.2s forwards;
+}
+
+@keyframes breatheIn {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
+
+.intro-line {
+    font-size: 32px;
+    font-weight: 400;
+    color: rgba(46, 46, 58, 0.9);
+    line-height: 1.5;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.intro-line.line-1 {
+    animation-delay: 0.5s;
+}
+
+.intro-line.line-2 {
+    animation-delay: 1.5s;
+}
+
+.intro-line.line-3 {
+    animation-delay: 2.5s;
+    font-weight: 600;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cta-button {
+    margin-top: 40px;
+    padding: 16px 40px;
+    background: linear-gradient(135deg, #7fa0b8, #8db89d);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(127, 160, 184, 0.3);
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 3.5s forwards;
+}
+
+.cta-button:hover:not(:disabled) {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(127, 160, 184, 0.4);
+}
+
+.cta-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Steps 2 & 3: Questions */
+.step-content {
+    max-width: 800px;
+    width: 100%;
+    padding: 40px;
+    text-align: center;
+}
+
+.step-headline {
+    font-size: 36px;
+    font-weight: 600;
+    color: rgba(46, 46, 58, 0.95);
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.step-subheadline {
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(70, 70, 90, 0.7);
+    margin-bottom: 40px;
+}
+
+.chip-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.chip {
+    padding: 14px 28px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 2px solid rgba(179, 168, 255, 0.3);
+    border-radius: 30px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    color: rgba(46, 46, 58, 0.8);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.chip-emoji {
+    font-size: 22px;
+    line-height: 1;
+    transition: transform 0.3s ease;
+}
+
+.chip-text {
+    line-height: 1;
+}
+
+.chip:hover {
+    background: rgba(179, 168, 255, 0.2);
+    border-color: rgba(179, 168, 255, 0.6);
+    transform: translateY(-2px);
+}
+
+.chip:hover .chip-emoji {
+    transform: scale(1.15);
+}
+
+.chip.selected {
+    background: linear-gradient(135deg, #B3A8FF, #9EC8B5);
+    border-color: transparent;
+    color: white;
+    box-shadow: 0 4px 12px rgba(179, 168, 255, 0.4);
+}
+
+/* Step 4: Guided Message */
+.message-content {
+    max-width: 900px;
+    width: 100%;
+    padding: 40px;
+    text-align: center;
+    position: relative;
+    overflow: visible;
+}
+
+.brain-clear-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.brain-clear-animation iframe {
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+}
+
+.message-headline {
+    font-size: 42px;
+    font-weight: 600;
+    color: rgba(46, 46, 58, 0.95);
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 100;
+}
+
+.message-body {
+    position: relative;
+    z-index: 100;
+    margin-bottom: 50px;
+}
+
+.message-body p {
+    font-size: 22px;
+    font-weight: 400;
+    color: rgba(70, 70, 90, 0.85);
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.message-body p:last-child {
+    font-weight: 600;
+}
+
+.message-content .cta-button {
+    position: relative;
+    z-index: 100;
+    pointer-events: auto;
+}
+
+/* Step 5: Reset Plan */
+.reset-content {
+    max-width: 1000px;
+    width: 100%;
+    padding: 40px;
+}
+
+.reset-headline {
+    font-size: 42px;
+    font-weight: 600;
+    color: rgba(46, 46, 58, 0.95);
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.reset-tasks {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.task-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.task-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(127, 160, 184, 0.2);
+}
+
+.task-card.completed {
+    background: linear-gradient(135deg, rgba(158, 200, 181, 0.15), rgba(179, 168, 255, 0.15));
+    border: 2px solid rgba(158, 200, 181, 0.4);
+}
+
+.task-number {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.task-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: rgba(46, 46, 58, 0.95);
+    margin-bottom: 10px;
+}
+
+.task-description {
+    font-size: 15px;
+    font-weight: 400;
+    color: rgba(70, 70, 90, 0.75);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.task-done {
+    width: 100%;
+    padding: 12px;
+    background: rgba(127, 160, 184, 0.1);
+    border: 2px solid rgba(127, 160, 184, 0.3);
+    border-radius: 20px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: #7fa0b8;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.task-done:hover {
+    background: rgba(127, 160, 184, 0.2);
+}
+
+.task-done.done {
+    background: linear-gradient(135deg, #9EC8B5, #8db89d);
+    border-color: transparent;
+    color: white;
+}
+
+.task-done.done::before {
+    content: '✓ ';
+}
+
+.reset-actions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.cta-button.primary {
+    background: linear-gradient(135deg, #7fa0b8, #8db89d);
+    color: white;
+    border: none;
+}
+
+.cta-button.secondary {
+    background: transparent;
+    color: rgba(70, 70, 90, 0.8);
+    border: 2px solid rgba(127, 160, 184, 0.3);
+}
+
+.cta-button.secondary:hover {
+    background: rgba(127, 160, 184, 0.1);
+}
+
+/* Step 6: Outro */
+.outro-content {
+    max-width: 700px;
+    width: 100%;
+    padding: 40px;
+    text-align: center;
+}
+
+.outro-message {
+    font-size: 28px;
+    font-weight: 400;
+    color: rgba(46, 46, 58, 0.9);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.outro-message:last-of-type {
+    font-weight: 500;
+    margin-bottom: 50px;
+}
+
+.outro-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.outro-actions .cta-button {
+    min-width: 280px;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0;
+    opacity: 1;
+    animation: none;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .intro-line {
+        font-size: 24px;
+    }
+
+    .step-headline {
+        font-size: 28px;
+    }
+
+    .chip-container {
+        gap: 10px;
+    }
+
+    .chip {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+
+    .reset-tasks {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .reset-actions {
+        flex-direction: column;
+    }
+
+    .cta-button {
+        width: 100%;
+    }
+
+    .message-headline {
+        font-size: 32px;
+    }
+
+    .message-body p {
+        font-size: 18px;
+    }
+
+    .brain-clear-animation {
+        width: 500px;
+        height: 500px;
+    }
+}
+
+/* Tablet */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .reset-tasks {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        max-width: 600px;
+        margin: 0 auto 50px;
+    }
+}
+

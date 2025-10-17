@@ -6,11 +6,11 @@
             <span class="logo-text">Mind Assistant</span>
         </div>
         <ul class="nav-menu">
-            <li><a href="#home" class="nav-link">Home</a></li>
-            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="index.php" class="nav-link">Home</a></li>
+            <li><a href="about.php" class="nav-link">About</a></li>
             <li><a href="#features" class="nav-link">Features</a></li>
             <li><a href="#contact" class="nav-link">Contact</a></li>
-            <li><a href="#" class="nav-link btn-primary">Get Started</a></li>
+            <li><a href="reflection.php" class="nav-link btn-primary">Get Started</a></li>
         </ul>
         <div class="hamburger">
             <span></span>
